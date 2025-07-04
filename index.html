@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Surya Agung Wicaksono</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="Logo 1.png" alt="Logo">
+                <span>Surya's Portofolio</span>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-me">Tentang Saya</a></li>
+                <li><a href="#my-portfolio">My Portfolio</a></li>
+                <li><a href="#contact-me">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <h1 id="welcome-message">Hai, Selamat Datang!</h1>
+            <p class="tagline">Jelajahi perjalanan saya dalam dunia rekayasa perangkat lunak dan temukan inovasi yang telah saya ciptakan.</p>
+            <p>Di sini Anda bisa mengenal lebih dekat tentang saya, melihat proyek-proyek terbaru yang telah saya kerjakan, dan terhubung langsung untuk potensi kolaborasi atau diskusi.</p>
+            <p>Selamat datang di ruang digital saya!</p>
+            <div class="banner-image">
+                <img src="Banner.png" alt="Banner Image">
+            </div>
+        </section>
+
+        <section id="about-me" class="profile-page" style="display: none;">
+            <h2>Tentang Saya</h2>
+            <div class="profile-content">
+                <div class="profile-banner">
+                    <img src="Banner Profil.jpg" alt="Profile Banner">
+                </div>
+                <h3>Siapa Saya</h3>
+                <p>Halo! Saya Surya Agung Wicaksono, seorang mahasiswa yang bersemangat dari Universitas Bhayangkara Jakarta Raya. Saat ini, saya sedang dalam perjalanan menarik untuk mendalami dunia rekayasa perangkat lunak (software engineering). Meskipun masih tergolong baru dalam bidang ini, saya memiliki antusiasme yang besar untuk belajar, berinovasi, dan berkontribusi dalam pengembangan solusi perangkat lunak yang fungsional dan berdampak.</p>
+                
+                <h3 style="margin-top: 30px;">Keahlian Saya</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4>Bahasa Pemrograman</h4>
+                        <ul>
+                            <li>Python (Dasar)</li>
+                            <li>JavaScript (Dasar)</li>
+                            <li>HTML5 & CSS3</li>
+                            <li>Java (Dasar)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Alat & Teknologi</h4>
+                        <ul>
+                            <li>Git & GitHub</li>
+                            <li>Visual Studio Code</li>
+                            <li>Google Chrome Developer Tools</li>
+                            <li>Command Line Interface (CLI)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Konsep & Metodologi</h4>
+                        <ul>
+                            <li>Dasar-dasar Rekayasa Perangkat Lunak</li>
+                            <li>Prinsip Pemrograman Berorientasi Objek (OOP)</li>
+                            <li>Pengembangan Web Responsif</li>
+                            <li>Validasi Formulir (JavaScript)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Soft Skills</h4>
+                        <ul>
+                            <li>Problem Solving</li>
+                            <li>Pembelajaran Cepat</li>
+                            <li>Kerja Tim & Kolaborasi</li>
+                            <li>Komunikasi Efektif</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="my-portfolio" class="portfolio-section" style="display: none;">
+            <h2>Portofolio Proyek Game Saya</h2> 
+            <p>Berikut adalah beberapa proyek game sederhana yang saya kerjakan sebagai bagian dari pembelajaran dan eksplorasi saya dalam pemrograman.</p>
+            
+            <div class="portfolio-item"> 
+                <h3>Proyek 1: Game Tetris</h3>
+                <p>Implementasi dasar game klasik Tetris, dibangun untuk memahami logika game, manipulasi array, dan rendering grafis sederhana.</p>
+                <a href="tetris/index.html" target="_blank">Lihat Proyek (Demo)</a> 
+                </div>
+            
+            <div class="portfolio-item">
+                <h3>Proyek 2: Game Ular Tangga</h3>
+                <p>Versi digital dari game papan Ular Tangga, fokus pada implementasi aturan main, pergerakan pemain, dan interaksi dadu.</p>
+                <a href="SnakesAndLadder/index.html" target="_blank">Lihat Proyek (Demo)</a>
+            </div>
+
+            <div class="portfolio-item">
+                <h3>Proyek 3: Game Catur (Dasar)</h3>
+                <p>Pengembangan dasar game catur, berfokus pada representasi papan, pergerakan bidak, dan validasi langkah sederhana.</p>
+                <a href="Chess/index.html" target="_blank">Lihat Proyek (Demo)</a>
+            </div>
+        </section>
+        
+        <section id="contact-me" style="display: none;">
+            <h2>Hubungi Saya</h2>
+            <div class="message-container">
+                <form id="messageForm">
+                    <div class="form-group">
+                        <label for="nama">Nama</label>
+                        <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggalLahir">Tanggal Lahir</label>
+                        <input type="date" id="tanggalLahir" name="tanggalLahir" value="2023-04-02" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Jenis Kelamin</label>
+                        <div class="radio-group">
+                            <input type="radio" id="lakiLaki" name="jenisKelamin" value="Laki-Laki" checked>
+                            <label for="lakiLaki">Laki-Laki</label>
+                            <input type="radio" id="perempuan" name="jenisKelamin" value="Perempuan">
+                            <label for="perempuan">Perempuan</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pesan">Pesan</label>
+                        <textarea id="pesan" name="pesan" placeholder="Sampaikan pesan atau pertanyaan Anda di sini..." required></textarea>
+                    </div>
+                    <button type="submit">Kirim Pesan</button>
+                </form>
+
+                <div class="form-output">
+                    <p>Waktu Saat Ini : <span id="currentTime"></span></p>
+                    <h3>Detail Pesan:</h3>
+                    <p>Nama : <span id="outputNama"></span></p>
+                    <p>Tanggal Lahir : <span id="outputTanggalLahir"></span></p>
+                    <p>Jenis Kelamin : <span id="outputJenisKelamin"></span></p>
+                    <p>Pesan : <span id="outputPesan"></span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created By Surya Agung Wicaksono</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

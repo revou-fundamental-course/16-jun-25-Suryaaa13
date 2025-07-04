@@ -1,0 +1,521 @@
+/* css/style.css */
+
+/* Variabel CSS untuk Warna */
+:root {
+    --primary-blue: #007bff; /* Biru utama */
+    --secondary-blue: #0056b3; /* Biru lebih gelap untuk hover/aksen */
+    --accent-color: #6f42c1; /* Ungu sebagai warna aksen cerah */
+    --text-color-dark: #343a40; /* Teks gelap */
+    --text-color-light: #f8f9fa; /* Teks terang */
+    --bg-light: #f8f9fa; /* Background sangat terang */
+    --bg-medium: #e9ecef; /* Background sedang */
+    --card-bg: #ffffff; /* Background kartu */
+    --border-color: #dee2e6; /* Warna border */
+    --shadow-light: rgba(0, 0, 0, 0.08); /* Bayangan ringan */
+    --shadow-medium: rgba(0, 0, 0, 0.15); /* Bayangan sedang */
+}
+
+/* Reset CSS dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-dark);
+    background-color: var(--bg-light);
+    scroll-behavior: smooth;
+}
+
+/* Header dan Navigasi */
+header {
+    background-color: var(--card-bg);
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700; /* Lebih tebal */
+    font-size: 1.6em;
+    color: var(--primary-blue);
+    letter-spacing: -0.5px;
+}
+
+.logo img {
+    height: 45px; /* Sedikit lebih besar */
+    margin-right: 12px;
+    border-radius: 50%; /* Membuat logo bulat jika memungkinkan */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px; /* Jarak antar item navigasi */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative; /* Untuk efek underline */
+}
+
+/* Efek underline saat hover/aktif */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-blue);
+    transition: width 0.3s ease-out;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--primary-blue);
+}
+
+/* Bagian Umum */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    background-color: var(--card-bg);
+    padding: 3rem;
+    margin-bottom: 2rem;
+    border-radius: 12px; /* Sudut lebih membulat */
+    box-shadow: 0 6px 20px var(--shadow-light); /* Bayangan lebih halus */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px); /* Efek sedikit naik saat hover */
+    box-shadow: 0 10px 25px var(--shadow-medium);
+}
+
+h1, h2 {
+    color: var(--primary-blue); /* Judul utama biru */
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 2.2em;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 4rem 3rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); /* Gradient biru */
+    color: var(--text-color-light);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.hero-section h1 {
+    font-size: 3.5em; /* Lebih besar */
+    color: var(--text-color-light); /* Teks putih */
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Sedikit bayangan teks */
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.9); /* Teks lebih terang */
+}
+
+.tagline {
+    font-weight: 600;
+    color: var(--bg-light); /* Warna kontras untuk tagline */
+    font-size: 1.4em;
+    margin-bottom: 1rem;
+}
+
+.banner-image img {
+    max-width: 60%; /* Lebih besar sedikit */
+    height: auto;
+    display: block;
+    margin: 2rem auto 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.banner-image img:hover {
+    transform: scale(1.02);
+}
+
+/* Message Us Section */
+.message-container {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#messageForm {
+    flex: 1;
+    min-width: 320px;
+    max-width: 550px;
+    background-color: var(--bg-medium); /* Background form sedikit gelap */
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.05); /* Bayangan ke dalam */
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: var(--secondary-blue);
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--card-bg);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.radio-group label {
+    display: inline-block;
+    margin-right: 1.5rem;
+    font-weight: 400;
+    color: var(--text-color-dark);
+}
+
+#messageForm button {
+    background-color: var(--accent-color); /* Warna aksen */
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Lebar penuh */
+    margin-top: 1rem;
+}
+
+#messageForm button:hover {
+    background-color: #5a32a6; /* Sedikit lebih gelap dari aksen */
+    transform: translateY(-2px);
+}
+
+.form-output {
+    flex: 1;
+    min-width: 320px;
+    background-color: var(--bg-medium);
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.form-output p {
+    margin-bottom: 0.8rem;
+    font-size: 1.05em;
+    color: var(--text-color-dark);
+}
+
+.form-output h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    color: var(--secondary-blue);
+    font-size: 1.5em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+/* About Me Section */
+.profile-banner {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-banner img {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px var(--shadow-medium);
+}
+
+.profile-page h3 {
+    color: var(--secondary-blue);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--primary-blue); /* Garis bawah yang menonjol */
+    padding-bottom: 0.5rem;
+    display: inline-block; /* Agar garis bawah hanya sepanjang teks */
+}
+
+.profile-page p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.skill-card {
+    background-color: var(--bg-medium);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px var(--shadow-medium);
+}
+
+.skill-card h4 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    text-align: left;
+    border-bottom: 2px solid var(--accent-color); /* Warna aksen untuk border bawah */
+    padding-bottom: 0.8rem;
+    font-size: 1.3em;
+}
+
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-card ul li {
+    padding: 0.6rem 0;
+    color: var(--text-color-dark);
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.skill-card ul li:last-child {
+    border-bottom: none;
+}
+
+/* Portfolio Section */
+.portfolio-section p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1em;
+}
+
+.portfolio-item {
+    background-color: var(--bg-medium);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-medium);
+}
+
+.portfolio-item h3 {
+    color: var(--secondary-blue);
+    margin-bottom: 0.8rem;
+    text-align: left;
+    font-size: 1.6em;
+}
+
+.portfolio-item p {
+    margin-bottom: 1rem;
+    text-align: left;
+    color: var(--text-color-dark);
+}
+
+.portfolio-item a {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.portfolio-item a:hover {
+    background-color: var(--secondary-blue);
+    transform: translateY(-2px);
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--primary-blue); /* Footer biru */
+    color: var(--text-color-light);
+    margin-top: 2rem;
+    font-size: 0.95em;
+    box-shadow: 0 -4px 10px var(--shadow-light);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin: 0;
+        margin-bottom: 0.8rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.8rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.8em;
+    }
+
+    .message-container {
+        flex-direction: column;
+    }
+
+    #messageForm, .form-output {
+        max-width: 100%;
+        min-width: unset;
+        padding: 2rem;
+    }
+
+    /* Penyesuaian untuk skills-grid di layar kecil */
+    .skills-grid {
+        grid-template-columns: 1fr; /* Satu kolom di layar kecil */
+    }
+
+    /* Sesuaikan banner profil untuk layar kecil */
+    .profile-banner img {
+        max-width: 100%; /* Gunakan lebar penuh di layar kecil */
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 1.5rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-section p {
+        font-size: 1.1em;
+    }
+
+    .logo span {
+        font-size: 1.3em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .profile-page h3, .form-output h3, .portfolio-item h3 {
+        font-size: 1.4em;
+    }
+
+    .skill-card h4 {
+        font-size: 1.1em;
+    }
+}
